@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import routerArr from "./router";
+import routerArr,{routes} from "./router";
 import {HashRouter as Router,Link} from 'react-router-dom';
 import  {Route,Switch} from 'react-router'
 import {connect} from 'react-redux'
@@ -26,11 +26,10 @@ class App extends Component{
                     <Switch>
                       {
                           routerArr.map((value, index, array)=>{
-                                    return   <Route path={value.path} render={()=><value.component/>} />
+                                    return  routes(value)
                           })
                       }
                     </Switch>
-
                     <Link to="/test1">About</Link>
                     <Link to="/test2">Product</Link>
                 </div>
