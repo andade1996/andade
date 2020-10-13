@@ -16,17 +16,10 @@ class App extends Component{
     }
 
     componentDidMount() {
-        console.log(this.props)
+
     }
 
-    handelClick=()=>{
-       const {add} =  this.props
-        let action = {
-            type:'',
-            value:'吃的卤肉饭'
-        }
-        add(action)
-    }
+
     render() {
         const {add,number} = this.props
         return (
