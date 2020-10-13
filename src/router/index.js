@@ -1,9 +1,7 @@
-
 import Test1 from './../pages/test1'
 import Test2 from './../pages/test2'
 import {Route} from "react-router";
 import React from "react";
-
 
 let routerArr = [
     {

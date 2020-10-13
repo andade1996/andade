@@ -3,4 +3,3 @@ import thunk from 'redux-thunk'
 import redux from "./redux";
 
 export default  createStore(redux,applyMiddleware(thunk))
- // export default  createStore(redux)
