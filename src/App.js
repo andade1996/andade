@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import Test1 from './pages/test1'
+import Test2 from './pages/Test2'
+import { Route,NavLink} from 'react-router-dom';
+import {connect} from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+    constructor(props) {
+        super(...arguments);
+        this.state={
+            a:{
+                a:1,
+                b:2
+            }
+        }
+    }
+
+    componentDidMount() {
+        console.log(this.props)
+    }
+
+    handelClick=()=>{
+       const {add} =  this.props
+        let action = {
+            type:'',
+            value:'吃的卤肉饭'
+        }
+        add(action)
+    }
+    render() {
+        const {add,number} = this.props
+        return (
+            <div className="App">
+                <NavLink to={'/test1'}>去test1</NavLink>
+                <NavLink to={'/test2'}>去test2</NavLink>
+                <div  onClick={this.handelClick}>信春哥得永生{number.add}</div>
+                <Route path={'/test1/:id'} component={Test1}></Route>
+                <Route path={'/test2'} component={Test2}></Route>
+            </div>
+        );
+    }
 }
 
-export default App;
+export default  connect((state)=>({number:state}),(dispatch)=>({
+    add:(action)=>dispatch(action)
+}))(App)
