@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import routerArr from "./router";
-import {NavLink} from 'react-router-dom';
+import {HashRouter as Router,Link} from 'react-router-dom';
+import  {Route,Switch} from 'react-router'
 import {connect} from 'react-redux'
 
 class App extends Component{
@@ -20,13 +21,21 @@ class App extends Component{
 
     render() {
         return (
-            <div className="App">
-                {
-                    routerArr&&routerArr.map(()=>{
+            <Router>
+                <div className="App">
+                    <Switch>
+                      {
+                          routerArr.map((value, index, array)=>{
+                                    return   <Route path={value.path} render={()=><value.component/>} />
+                          })
+                      }
+                    </Switch>
 
-                    })
-                }
-            </div>
+                    <Link to="/test1">About</Link>
+                    <Link to="/test2">Product</Link>
+                </div>
+            </Router>
+
         );
     }
 }
