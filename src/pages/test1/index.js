@@ -1,31 +1,39 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import {TestFun} from './../../store/action'
+
  class Test1 extends Component {
     constructor(props) {
         super(...arguments);
-        this.state = {number:null};
+        this.state = {
+
+        };
     }
     componentDidMount() {
 
         console.log(this.props,"为什么?")
     }
     handelClick=()=>{
-       let {add,text} =  this.props
-        add({type:'123'})
-       this.setState({
-           number:this.props.text.text.floatNumber
-       })
+      const {add} = this.props
+        add()
+        console.log(this.props.text.text.floatNumber,"text")
     }
     render() {
         return (
             <div onClick={this.handelClick}>
-                今天也是美好的 {this.state.number}天
+                今天也是美好的 天
             </div>
         )
     }
 }
+function mapDispatchToProps(dispatch){
+     return {
+         add:bindActionCreators(TestFun,dispatch)
 
-export default  connect((state)=>({text:state}),(dispatch)=>({
-    add:(action)=>dispatch(action)
-}))(Test1)
+     }
+}
+
+
+export default  connect((state)=>({text:state}),mapDispatchToProps)(Test1)
 
