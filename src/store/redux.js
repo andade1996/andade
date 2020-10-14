@@ -4,7 +4,7 @@ let initState = {
     floatNumber:0.1
 }
 function add(state=initState,action) {
-    console.log('胡啊you?');
+    console.log('胡啊you  ?');
 
     if (action.type === ''){
                 state++
