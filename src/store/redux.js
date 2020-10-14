@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux'
+import TestReducer from './../pages/test1/redux/Reducer'
 let initState = {
     number:0,
     floatNumber:0.1
@@ -12,5 +13,6 @@ function reducer(state=initState,action){
 }
 
 export  default combineReducers({
-    reducer
+    reducer,
+    TestReducer
 })

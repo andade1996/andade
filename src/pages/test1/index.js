@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import {TestFun} from './../../store/action'
-
+import {zbc} from './redux/action'
  class Test1 extends Component {
     constructor(props) {
         super(...arguments);
@@ -29,8 +29,8 @@ import {TestFun} from './../../store/action'
 }
 function mapDispatchToProps(dispatch){
      return {
-         add:bindActionCreators(TestFun,dispatch)
-
+         add:bindActionCreators(TestFun,dispatch),
+         zbc:bindActionCreators(zbc,dispatch)
      }
 }
 
