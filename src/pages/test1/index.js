@@ -17,7 +17,7 @@ import {TestFun} from './../../store/action'
     handelClick=()=>{
       const {add} = this.props
         add()
-        console.log(this.props.text.text.floatNumber,"text")
+        console.log(this.props,"text")
     }
     render() {
         return (
