@@ -1,5 +1,6 @@
 let initTestState ={
-    number:0
+    number:0,
+    number1:0
 }
 
 

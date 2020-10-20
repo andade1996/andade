@@ -12,11 +12,11 @@ import {zbc} from './redux/action'
     }
     componentDidMount() {
 
-        console.log(this.props,"为什么?")
+
     }
     handelClick=()=>{
       const {add} = this.props
-        add()
+
         console.log(this.props,"text")
     }
     render() {
@@ -33,7 +33,12 @@ function mapDispatchToProps(dispatch){
          zbc:bindActionCreators(zbc,dispatch)
      }
 }
+function  mapStateToProps(state){
+        return {//解耦
+            aa1:state.TestReducer.number,
+            aa2:state.TestReducer.number1
+        }
+}
 
-
-export default  connect((state)=>({text:state}),mapDispatchToProps)(Test1)
+export default  connect(mapStateToProps,mapDispatchToProps)(Test1)
 
