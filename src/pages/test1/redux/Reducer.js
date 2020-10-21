@@ -1,3 +1,6 @@
+import {combineReducers} from 'redux'
+
+
 let initTestState ={
     number:0,
     number1:0
@@ -5,9 +8,10 @@ let initTestState ={
 
 
 function TestReducer(state=initTestState,action) {
-        console.log('雷霆嘎巴！')
+
     return state
 }
 
 
-export default TestReducer
+
+export default  TestReducer

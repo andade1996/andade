@@ -3,29 +3,29 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import {TestFun} from './../../store/action'
 import {zbc} from './redux/action'
+import Test from "./moudel/Test";
  class Test1 extends Component {
     constructor(props) {
         super(...arguments);
-        this.state = {
+        this.state = {};
 
         };
+    handelClick = ()=>{
+        console.log(this.props,"今天我吃定了小橘子了！");
+       const {add} = this.props
+        add()
     }
-    componentDidMount() {
+     render() {
+         return (
+             <div onClick={this.handelClick}>
+                 今天我吃小橘子
+                 <Test data='欧青辣少' />
+             </div>
+         )
+     }
 
 
-    }
-    handelClick=()=>{
-      const {add} = this.props
 
-        console.log(this.props,"text")
-    }
-    render() {
-        return (
-            <div onClick={this.handelClick}>
-                今天也是美好的 天
-            </div>
-        )
-    }
 }
 function mapDispatchToProps(dispatch){
      return {
