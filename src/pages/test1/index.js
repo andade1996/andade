@@ -8,12 +8,11 @@ import Test from "./moudel/Test";
     constructor(props) {
         super(...arguments);
         this.state = {};
-
         };
     handelClick = ()=>{
         console.log(this.props,"今天我吃定了小橘子了！");
-       const {add} = this.props
-        add()
+       const {zbc} = this.props
+        zbc()
     }
      render() {
          return (

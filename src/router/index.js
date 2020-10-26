@@ -15,7 +15,7 @@ let routerArr = [
 ]
 
 export  function routes(list){
-     return <Route exact path={list.path} render={(props)=><list.component {...props}/>} />
+     return <Route exact path={list.path} key={list} render={(props)=><list.component {...props}/>} />
 }
 
 

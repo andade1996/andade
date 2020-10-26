@@ -13,11 +13,9 @@ class App extends Component{
         }
     }
     componentDidMount() {
-        console.log(this.props,"???");
+
     }
-    handelClick= ()=>{
-        this.props.add({type:''})
-    }
+
 
     render() {
         return (
