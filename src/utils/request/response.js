@@ -4,9 +4,10 @@ import instance from './index'
 
 instance.interceptors.response.use(function (response) {
     // 对响应数据做点什么
+
     let obj = {
         data: response.data,
-        status:response.status
+        status: response.status
     }
 
     return obj
