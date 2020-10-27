@@ -6,8 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from'react-router-dom'
 import store from './store/index'
 import  {Provider} from 'react-redux'
-import  './utils/request'
+import  './utils/request/index'
+import  './utils/request/request'
+import  './utils/request/response'
 import './utils/mock/index'
+
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
