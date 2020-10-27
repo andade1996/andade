@@ -1,14 +1,20 @@
-import {combineReducers} from 'redux'
+import {zbcsuccess,zbcerror} from './constText'
 
 
 let initTestState ={
-    number:0,
-    number1:0
+    arrList:[],
+
 }
 
 
 function TestReducer(state=initTestState,action) {
 
+                switch (action.type){
+                    case zbcsuccess:
+                       return  Object.assign({},state,{
+                           arrList:action
+                       })
+                }
     return state
 }
 
