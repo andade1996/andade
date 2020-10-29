@@ -12,7 +12,7 @@ import Test from "./moudel/Test";
     handelClick = ()=>{
         console.log(this.props,"今天我吃定了小橘子了！");
        const {zbc} = this.props
-        zbc()
+        zbc(123)
     }
      render() {
          return (
