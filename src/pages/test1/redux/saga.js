@@ -6,7 +6,7 @@ import {zbcSuccess} from './action'
 
 function *getList(){//各种请求数据方法,那么我们在别的地方写请求然后在下面fork
     const a = yield call(TestPost,{})
-    yield put(zbcSuccess(a.data))
+       yield put(zbcSuccess(a.data))
 }
 
 
