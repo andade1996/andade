@@ -23,8 +23,6 @@ import Test from "./moudel/Test";
          )
      }
 
-
-
 }
 function mapDispatchToProps(dispatch){
      return {
