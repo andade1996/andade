@@ -9,7 +9,10 @@ import Test from "./moudel/Test";
         super(...arguments);
         this.state = {};
         };
-    handelClick = ()=>{
+
+
+
+     handelClick = ()=>{
         console.log(this.props,"今天我吃定了小橘子了！");
        const {zbc} = this.props
         zbc(123)
@@ -18,6 +21,7 @@ import Test from "./moudel/Test";
          return (
              <div onClick={this.handelClick}>
                  今天我吃小橘子
+
                  <Test data='欧青辣少' />
              </div>
          )
