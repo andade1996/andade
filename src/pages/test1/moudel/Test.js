@@ -1,11 +1,25 @@
 
-import React, {Component,useEffect} from 'react';
+import React, {Component,useEffect,useState} from 'react';
+import  {TestPost} from './../axios/axiosRequest'
 
 export default ()=>{
+    const [data,setData] = useState({ hits: [] })
         useEffect(()=>{
-               document.title='吃个葡萄吧'
-        })
+
+                     const  result = async ()=>{
+                                  const  res = await TestPost()
+                                setData(res.data)
+                                    console.log(data,"???")
+
+                     }
+                            result()
 
 
-        return <h1>我不是很好</h1>
+        },[])
+
+
+        return <div>
+                真棘手啊
+            </div>
+
 }
