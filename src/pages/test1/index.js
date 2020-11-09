@@ -4,13 +4,13 @@ import {bindActionCreators} from 'redux'
 import {TestFun} from './../../store/action'
 import {zbc} from './redux/action'
 import Test from "./moudel/Test";
+export const {Provider, Consumer} = React.createContext('zbc');
  class Test1 extends Component {
     constructor(props) {
         super(...arguments);
         this.state = {};
         };
     handelClick = ()=>{
-        console.log(this.props,"今天我吃定了小橘子了！");
        const {zbc} = this.props
         zbc()
     }
@@ -18,7 +18,10 @@ import Test from "./moudel/Test";
          return (
              <div onClick={this.handelClick}>
                  今天我吃小橘子
-                 <Test data='欧青辣少' />
+                 <Provider value={'欧青拉绍'}>
+                     <Test/>
+                 </Provider>
+
              </div>
          )
      }

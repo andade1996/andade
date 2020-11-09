@@ -1,25 +1,18 @@
-
 import React, {Component,useEffect,useState} from 'react';
-import  {TestPost} from './../axios/axiosRequest'
+import  {TestPost} from './../axios/axiosRequest';
+import {Consumer} from './../index';
 
-export default ()=>{
-    const [data,setData] = useState({ hits: [] })
-        useEffect(()=>{
+export default function Test(){
+        const  [count,setCount] = useState(0);
 
-                     const  result = async ()=>{
-                                  const  res = await TestPost()
-                                setData(res.data)
-                                    console.log(data,"???")
-
-                     }
-                            result()
-
-
-        },[])
-
-
-        return <div>
-                真棘手啊
-            </div>
-
-}
+        return  (
+            <>
+                <div>
+                    <p>You clicked {count} times</p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Click me
+                    </button>
+                </div>
+            </>
+        )
+      }
